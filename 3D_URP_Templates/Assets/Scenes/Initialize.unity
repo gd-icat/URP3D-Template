@@ -1410,7 +1410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 869844507}
   m_Layer: 6
-  m_Name: <------------Camera & UI------------>
+  m_Name: <------------Camera------------>
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1898,8 +1898,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef7bfa04ab86e18439a0be836f3c3ab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerAim: 0
   _aimPanel: {fileID: 480864469}
-  _isPlayerAiming: 0
 --- !u!1 &1106089632
 GameObject:
   m_ObjectHideFlags: 3
@@ -2132,6 +2132,37 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &1160017138
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1160017139}
+  m_Layer: 6
+  m_Name: <------------UI------------>
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1160017139
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160017138}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1248572641
 GameObject:
   m_ObjectHideFlags: 0
@@ -2726,6 +2757,121 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5452607573722323100, guid: db80fe6e561568344819d208df41bb9b,
+        type: 3}
+      propertyPath: _OnPlayerAim.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452607573722323100, guid: db80fe6e561568344819d208df41bb9b,
+        type: 3}
+      propertyPath: _OnPlayerAimEnd.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452607573722323100, guid: db80fe6e561568344819d208df41bb9b,
+        type: 3}
+      propertyPath: _OnPlayerAimStart.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452607573722323100, guid: db80fe6e561568344819d208df41bb9b,
+        type: 3}
+      propertyPath: _OnPlayerAim.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452607573722323100, guid: db80fe6e561568344819d208df41bb9b,
+        type: 3}
+      propertyPath: _OnPlayerAim.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1100877252}
+    - target: {fileID: 5452607573722323100, guid: db80fe6e561568344819d208df41bb9b,
+        type: 3}
+      propertyPath: _OnPlayerAimEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452607573722323100, guid: db80fe6e561568344819d208df41bb9b,
+        type: 3}
+      propertyPath: _OnPlayerAim.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452607573722323100, guid: db80fe6e561568344819d208df41bb9b,
+        type: 3}
+      propertyPath: _OnPlayerAimEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1100877252}
+    - target: {fileID: 5452607573722323100, guid: db80fe6e561568344819d208df41bb9b,
+        type: 3}
+      propertyPath: _OnPlayerAimStart.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452607573722323100, guid: db80fe6e561568344819d208df41bb9b,
+        type: 3}
+      propertyPath: _OnPlayerAim.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeAim
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452607573722323100, guid: db80fe6e561568344819d208df41bb9b,
+        type: 3}
+      propertyPath: _OnPlayerAimStart.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1100877252}
+    - target: {fileID: 5452607573722323100, guid: db80fe6e561568344819d208df41bb9b,
+        type: 3}
+      propertyPath: _OnPlayerAimEnd.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452607573722323100, guid: db80fe6e561568344819d208df41bb9b,
+        type: 3}
+      propertyPath: _OnPlayerAimEnd.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeAim
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452607573722323100, guid: db80fe6e561568344819d208df41bb9b,
+        type: 3}
+      propertyPath: _OnPlayerAimStart.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452607573722323100, guid: db80fe6e561568344819d208df41bb9b,
+        type: 3}
+      propertyPath: _OnPlayerAimStart.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeAim
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452607573722323100, guid: db80fe6e561568344819d208df41bb9b,
+        type: 3}
+      propertyPath: _OnPlayerAim.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: sarbajit.icat.UIController3D, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452607573722323100, guid: db80fe6e561568344819d208df41bb9b,
+        type: 3}
+      propertyPath: _OnPlayerAim.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452607573722323100, guid: db80fe6e561568344819d208df41bb9b,
+        type: 3}
+      propertyPath: _OnPlayerAimEnd.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: sarbajit.icat.UIController3D, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452607573722323100, guid: db80fe6e561568344819d208df41bb9b,
+        type: 3}
+      propertyPath: _OnPlayerAimStart.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: sarbajit.icat.UIController3D, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452607573722323100, guid: db80fe6e561568344819d208df41bb9b,
+        type: 3}
+      propertyPath: _OnPlayerAimStart.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452607573722323100, guid: db80fe6e561568344819d208df41bb9b,
+        type: 3}
+      propertyPath: _OnPlayerAim.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452607573722323100, guid: db80fe6e561568344819d208df41bb9b,
+        type: 3}
+      propertyPath: _OnPlayerAimEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5452607573722323100, guid: db80fe6e561568344819d208df41bb9b,
+        type: 3}
+      propertyPath: _OnPlayerAimStart.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2743,9 +2889,10 @@ SceneRoots:
   - {fileID: 1834259328}
   - {fileID: 338609187}
   - {fileID: 869844507}
+  - {fileID: 515048119}
+  - {fileID: 544476758}
+  - {fileID: 1160017139}
   - {fileID: 835905193}
   - {fileID: 535480522}
   - {fileID: 518976490}
   - {fileID: 4141467931185243652}
-  - {fileID: 515048119}
-  - {fileID: 544476758}
