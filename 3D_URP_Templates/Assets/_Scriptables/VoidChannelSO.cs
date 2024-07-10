@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace sarbajit.icat
 {
-    [CreateAssetMenu(menuName = "Even Channels/Void", fileName = "VEC_New", order = 0)]
+    [CreateAssetMenu(menuName = "Event Channels/Void", fileName = "VEC_New", order = 0)]
     public class VoidChannelSO : ScriptableObject
     {
         public event Action OnEventRaised;

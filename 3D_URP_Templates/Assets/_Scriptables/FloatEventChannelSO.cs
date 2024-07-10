@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace sarbajit.icat
 {
-    [CreateAssetMenu(menuName = "Even Channels/Numerical", fileName = "NEC_New", order = 1)]
+    [CreateAssetMenu(menuName = "Event Channels/Numerical", fileName = "NEC_New", order = 1)]
     public class FloatEventChannelSO : EventChannelSOBase<float>
     {
         public override void RaiseSimpleEvent(float signal, float data)
