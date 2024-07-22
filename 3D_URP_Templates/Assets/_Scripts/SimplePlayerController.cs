@@ -1,25 +1,26 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using sarbajit.icat;
 
-public enum MovementType
-{
-    scripted,
-    physicsBased,
-    CharacterController,
-    All,
-    None
-}
-
+[RequireComponent(typeof(CharacterController))]
 public class SimplePlayerController : MonoBehaviour
 {
-    [SerializeField] private MovementType _moveType = MovementType.scripted;
+    [SerializeField, Header("Required References"), Space(2)] private Transform _visual, _followTarget;
+    [SerializeField, Header("Control Variables"), Space(4)] 
+    private MovementType _moveType = MovementType.scripted;
     [SerializeField, Range(1, 100)] private float _moveSpeed = 1, _turnSpeed = 1, _sensitivity = 5, _jumpPower;
-    [SerializeField, Space(2)] private UnityEvent _OnPlayerAimStart, _OnPlayerAimEnd;
-    [SerializeField, Header("Inputs"), Space(5)] private bool _jumping  = false, _playerLook = false;
-    [SerializeField] private Vector3 _move;
+    [SerializeField, Space(4)] private UnityEvent _OnPlayerAimStart, _OnPlayerAimEnd;
+    [SerializeField, Header("Input Values"), Space(4)] private Vector3 _move; 
+    [SerializeField] private bool _jumping = false, _playerLook = false;
     [SerializeField] private Vector2 _moveInput, _lookInput;
     [SerializeField] private float _hAngle, _vAngle;
+    CharacterController _playerCC;
+    private void Awake()
+    {
+        _playerCC = GetComponent<CharacterController>();
+    }
+
     public void MoveInput(InputAction.CallbackContext context)
     {
         _moveInput = context.ReadValue<Vector2>();
@@ -60,6 +61,25 @@ public class SimplePlayerController : MonoBehaviour
     {
         if (_moveType == MovementType.scripted) 
         {
+            if (!_jumping)
+            {
+                _jumpPower = Mathf.MoveTowards(_jumpPower, 0, Time.deltaTime);
+            }
+
+            else
+            {
+                _jumpPower = Mathf.MoveTowards(_jumpPower, 10, Time.deltaTime);
+            }
+
+            if (_moveInput != Vector2.zero)
+            {
+                _move = new(_moveInput.x, _jumpPower, _moveInput.y);
+                transform.Translate(_move);
+            }
+        }
+
+        else if (_moveType == MovementType.CharacterController)
+        {
             if (_jumping)
             {
                 _jumpPower = 10;
@@ -69,17 +89,17 @@ public class SimplePlayerController : MonoBehaviour
             {
                 _jumpPower = 0;
             }
-
             if (_moveInput != Vector2.zero)
             {
-                _move = new(_move.x, _jumpPower, _moveInput.y);
-                transform.Translate(_move);
+                _move.x = _moveInput.x;
+                _move.y = _jumpPower;
+                _move.z = _moveInput.y;
+
+                _playerCC.Move(_moveSpeed * Time.deltaTime * _move);
+                
+                //Character Rotation
+                _visual.transform.forward = _move;
             }
-        }
-
-        else if (_moveType == MovementType.CharacterController)
-        {
-
         }
 
         //Aim3D(_playerLook);

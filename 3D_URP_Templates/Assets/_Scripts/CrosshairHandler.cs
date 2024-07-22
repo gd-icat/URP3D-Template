@@ -9,10 +9,6 @@ namespace sarbajit.icat
         [SerializeField] private Image _defaultCH, _expandedCH;
         [SerializeField] private ColorBlock _crosshairColors;
         [SerializeField] private bool _expanded = false;
-        private void Awake()
-        {
-            
-        }
 
         private void Start()
         {

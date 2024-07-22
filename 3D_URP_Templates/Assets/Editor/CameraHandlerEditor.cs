@@ -17,8 +17,16 @@ namespace sarbajit.icat
 
             if (camHandler.CamCount > 0)
             {
-                if (GUILayout.Button("Load Cameras"))
+                //Setting GUIStyle for GUI style properties
+                GUIStyle style = GUI.skin.button;
+                style.fixedWidth = 200;
+                style.alignment = TextAnchor.MiddleCenter;
+
+                //Using style and text to create button
+                if (GUILayout.Button("Setup Cams", style))
                 {
+                    //Calling Setup function, TBD event hookup
+                    camHandler.CheckLoaded();
                     camHandler.Setup();
                 }
             }
